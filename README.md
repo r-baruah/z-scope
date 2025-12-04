@@ -2,19 +2,33 @@
 
 <div align="center">
 
-![Z-Scope Banner](https://via.placeholder.com/1200x400/0a0a0a/22c55e?text=Z-Scope+Privacy+Analytics)
+<img src="assets/logo.png" alt="Z-Scope Logo" width="200" />
 
 **A Real-Time Privacy Analytics Platform for the Zcash Ecosystem**
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://z-scope.vercel.app)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Built with React](https://img.shields.io/badge/React-18.3-blue)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge&logo=vercel)](https://z-scope.vercel.app)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![Built with React](https://img.shields.io/badge/React-18.3-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Zcash](https://img.shields.io/badge/Zcash-Privacy-f5a900?style=for-the-badge&logo=zcash)](https://z.cash)
 
-**Zcash Hackathon 2024 | Built by Ripuranjan Baruah**
+**Built for Zypherpunks Hackathon 2025 | By Ripuranjan Baruah**
 
-[Live Demo](#) • [Video Demo](#) • [Telegram Alerts](https://t.me/zscope_alerts) • [Worker Status](https://long-art-bd4d.fi493072.workers.dev/health)
+[Live Demo](#) • [Video Demo](https://www.youtube.com/watch?v=5eVHYjtfir4) • [Telegram Alerts](https://t.me/zscope_alerts) • [Worker Status](https://long-art-bd4d.fi493072.workers.dev/health)
 
+</div>
+
+---
+
+## 📸 Project Gallery
+
+<div align="center">
+  <img src="assets/hero_screenshot.png" alt="Z-Scope Hero Section" width="100%" style="border-radius: 10px; margin-bottom: 20px;" />
+</div>
+
+<div align="center" style="display: flex; gap: 10px; justify-content: center;">
+  <img src="assets/calc.png" alt="Privacy Calculator" width="48%" style="border-radius: 10px;" />
+  <img src="assets/analytics_screenshot.png" alt="Network Analytics" width="48%" style="border-radius: 10px;" />
 </div>
 
 ---
@@ -29,66 +43,64 @@ Most users don't realize the extent of their data leakage. Traditional finance c
 
 **Z-Scope** bridges personal privacy awareness with network-level analytics through three core features:
 
-### 1. Privacy Calculator
-Quantifies YOUR personal data leakage from traditional payments with interactive visualization
+### 1. Privacy Calculator 🧮
+Quantifies YOUR personal data leakage from traditional payments with interactive visualization. It gamifies privacy awareness, showing you exactly how much data you are giving away daily.
 
-### 2. Live Network Analytics
-Real-time Zcash shielded pool metrics showing 30.15% adoption (4.92M ZEC protected)
+### 2. Live Network Analytics 📊
+Real-time Zcash shielded pool metrics showing **30.15% adoption** (4.92M ZEC protected). We visualize the "anonymity set" to demonstrate the strength of the network.
 
-### 3. Whale Watch System
-Automated monitoring of large transparent transactions with Telegram alerts every 5 minutes
-
-**By making surveillance tangible and Zcash's value proposition clear, Z-Scope educates users while demonstrating real-world privacy adoption.**
+### 3. Whale Watch System 🐳
+Automated monitoring of large transparent transactions with **Telegram alerts** every 5 minutes. This proves why privacy matters—if you don't use shielded addresses, the whole world can see your wealth.
 
 ---
 
 ## ✨ Key Features
 
 ### 🔢 Privacy Calculator
-- Real-time calculation: `transactions × 4 trackers × 12 months`
-- Gamified percentile ranking
-- LocalStorage persistence
-- Eye-opening metrics that make privacy tangible
+- **Real-time calculation**: `transactions × 4 trackers × 12 months`
+- **Gamified percentile ranking**: See how you compare to others.
+- **LocalStorage persistence**: Your score is saved privately on your device.
+- **Eye-opening metrics**: Makes abstract privacy concepts tangible.
 
 ### 📊 Network Analytics
-- **Live Metrics**: 4.92M ZEC ($209M) in shielded pool
-- **Adoption Rate**: 30.15% of circulation is private
-- **Hybrid Strategy**: Real API + statistical sampling for 100% uptime
-- **24/7 Monitoring**: Network health tracking
+- **Live Metrics**: 4.92M ZEC ($209M) in shielded pool.
+- **Adoption Rate**: 30.15% of circulation is private.
+- **Hybrid Strategy**: Real API + statistical sampling for 100% uptime.
+- **Glassmorphism UI**: Beautiful, modern data visualization.
 
 ### 🐳 Whale Watch
-- **Automated Alerts**: Cloudflare Worker checks every 5 minutes
-- **Telegram Integration**: Push notifications for transactions > $100k
-- **KV Storage**: Deduplication prevents spam
-- **Live Worker**: https://long-art-bd4d.fi493072.workers.dev
+- **Automated Alerts**: Cloudflare Worker checks every 5 minutes.
+- **Telegram Integration**: Push notifications for transactions > $100k.
+- **KV Storage**: Deduplication prevents spam.
+- **Live Worker**: [Check Status](https://long-art-bd4d.fi493072.workers.dev/health)
 
 ---
 
 ## 🏗️ Technical Architecture
 
-```
-Frontend (React + TypeScript)
-├─ Privacy Calculator → LocalStorage
-├─ Network Analytics → Blockchair API → Fallback Data
-└─ Whale Watch UI → Link to Telegram
-
-Cloudflare Worker (Cron: */5 * * * *)
-├─ Fetch Zcash Transactions
-├─ Filter > $100k USD
-├─ Check KV (already alerted?)
-├─ Send Telegram Alert
-└─ Store in KV (30 day TTL)
-
-Telegram Bot (@zscope_alerts)
-└─ Push Notifications to Channel
+```mermaid
+graph TD
+    User[User] --> Frontend[React Frontend]
+    Frontend --> LocalStorage[Local Storage]
+    Frontend --> Blockchair[Blockchair API]
+    
+    Worker[Cloudflare Worker] --> Cron[Cron Trigger (5m)]
+    Cron --> Fetch[Fetch Transactions]
+    Fetch --> Filter[Filter > $100k]
+    Filter --> KV[KV Storage]
+    Filter --> Telegram[Telegram Bot API]
+    Telegram --> Channel[Telegram Channel]
 ```
 
 ### Tech Stack
 
-**Frontend**: React 18 + TypeScript + Vite + Tailwind CSS v4 + Tremor  
-**Backend**: Cloudflare Workers + KV Storage + Cron Triggers  
-**APIs**: Blockchair (Zcash), CoinGecko (Price), Telegram Bot API  
-**Deployment**: Vercel (Frontend) + Cloudflare (Worker)
+| Component | Technology |
+|-----------|------------|
+| **Frontend** | React 18, TypeScript, Vite, Tailwind CSS v4, Tremor |
+| **Styling** | Glassmorphism, Neon Gradients, 'Outfit' & 'Inter' Fonts |
+| **Backend** | Cloudflare Workers, KV Storage, Cron Triggers |
+| **APIs** | Blockchair (Zcash), CoinGecko (Price), Telegram Bot API |
+| **Deployment** | Vercel (Frontend), Cloudflare (Worker) |
 
 ---
 
@@ -112,7 +124,7 @@ npm install
 npm run dev
 ```
 
-Visit: http://localhost:5173
+Visit: `http://localhost:5173`
 
 ### Build for Production
 
@@ -125,20 +137,21 @@ npm run preview
 
 ## 🎨 Design Philosophy
 
-**Cyberpunk Aesthetic**
-- **Neon Green** (#22c55e): Freedom, privacy, "shielded"
-- **Neon Pink** (#ec4899): Danger, surveillance, "exposed"  
-- **Dark Mode**: Professional, focus-enhancing
+**"Cyberpunk Glass" Aesthetic**
+We chose a high-tech, futuristic design language to reflect the advanced cryptographic nature of Zcash.
 
-**User Experience**
-- Mobile-first responsive design
-- WCAG 2.1 AA accessible
-- Sub-2s load times
-- Smooth animations
+- **Glassmorphism**: Translucent cards (`glass-card`) create depth and hierarchy.
+- **Neon Accents**: 
+  - **Neon Green** (#00ff9d): Represents privacy, freedom, and the "shielded" pool.
+  - **Neon Pink** (#ff00ff): Represents surveillance, danger, and "transparent" leakage.
+- **Typography**: 
+  - **Headings**: 'Outfit' - Modern, geometric, bold.
+  - **Body**: 'Inter' - Clean, readable, neutral.
+- **Animations**: Subtle floating effects and pulse animations to make the interface feel alive.
 
 ---
 
-## 🏆 Hackathon Bounty Eligibility
+## 🏆 Hackathon Tracks
 
 ### ✅ Zcash Data & Analytics Track
 - Real-time shielded pool metrics (30.15% adoption)
@@ -157,91 +170,21 @@ npm run preview
 
 ---
 
-## 📊 Project Statistics
-
-- **Lines of Code**: 3,000+
-- **Components**: 5 major React components
-- **Custom Hooks**: 3 (useShieldedSupply, useWhaleMonitor, usePrivacyScore)
-- **API Integrations**: 3 (Blockchair, CoinGecko, Telegram)
-- **Deployment Time**: < 1 hour from code to production
-- **Uptime**: 99.9% (Cloudflare + Vercel infrastructure)
-
----
-
 ## 🔐 Privacy & Security
 
-- **No Tracking**: Zero analytics or tracking scripts
-- **No Data Collection**: Everything stays client-side
-- **LocalStorage Only**: Privacy scores never leave your device
-- **Open Source**: Transparent, auditable code
-- **Encrypted Secrets**: Telegram credentials via Cloudflare secrets management
-
----
-
-## 📖 Documentation
-
-- **[Implementation Plan](./IMPLEMENTATION_PLAN.md)** - Technical blueprint (1,300+ lines)
-- **[Worker Setup](../z-scope-worker/DEPLOY_VIA_DASHBOARD.md)** - Cloudflare deployment guide
-- **[Telegram Setup](../TELEGRAM_CLOUDFLARE_SETUP.md)** - Bot configuration
-- **[Debugging Guide](./DEBUGGING_TASK.md)** - Troubleshooting reference
-
----
-
-## 🎥 Demo & Links
-
-- **Live Application**: [z-scope.vercel.app](#)
-- **Whale Monitor**: [long-art-bd4d.fi493072.workers.dev/health](https://long-art-bd4d.fi493072.workers.dev/health)
-- **Telegram Alerts**: [t.me/zscope_alerts](https://t.me/zscope_alerts)
-- **Demo Video**: [YouTube](#)
-- **GitHub**: [github.com/yourusername/z-scope](#)
+- **No Tracking**: Zero analytics or tracking scripts.
+- **No Data Collection**: Everything stays client-side.
+- **LocalStorage Only**: Privacy scores never leave your device.
+- **Open Source**: Transparent, auditable code.
+- **Encrypted Secrets**: Telegram credentials via Cloudflare secrets management.
 
 ---
 
 ## 👨‍💻 Developer
 
 **Ripuranjan Baruah**
-- Built for Zcash Hackathon 2024
-- Solo developer, 5-hour sprint
+- Built for **Zypherpunks Hackathon 2025**
 - Full-stack TypeScript + Serverless architecture
-
----
-
-## 🙏 Acknowledgments
-
-- **Zcash Foundation** - For building privacy-preserving technology
-- **Blockchair** - For reliable Zcash network data API
-- **Tremor** - For beautiful dashboard components
-- **Cloudflare** - For serverless infrastructure
-- **Hackathon Organizers** - For the opportunity to build
-
----
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) file for details
-
----
-
-## 🚧 Roadmap (Post-Hackathon)
-
-- [ ] Historical trend charts (7-day shielded pool growth)
-- [ ] Wallet integration (MetaMask/Zcash wallets)
-- [ ] Multi-language support (i18n)
-- [ ] Advanced filtering (whale size thresholds)
-- [ ] Privacy score sharing (Twitter/social)
-- [ ] Mobile app (React Native)
-
----
-
-## 🤝 Contributing
-
-Contributions welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open Pull Request
 
 ---
 
@@ -249,7 +192,7 @@ Contributions welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guideli
 
 **"Privacy is Normal" - Join the Shielded Movement** 🛡️
 
-Made with ❤️ and ☕ by Ripuranjan Baruah for Zcash Hackathon 2024
+Made with ❤️ and ☕ by Ripuranjan Baruah
 
 [⬆ Back to Top](#z-scope-quantifying-surveillance-visualizing-freedom)
 
