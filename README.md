@@ -78,19 +78,20 @@ Automated monitoring of large transparent transactions with **Telegram alerts** 
 
 ## 🏗️ Technical Architecture
 
-```mermaid
-graph TD
-    User[User] --> Frontend[React Frontend]
-    Frontend --> LocalStorage[Local Storage]
-    Frontend --> Blockchair[Blockchair API]
-    
-    Worker[Cloudflare Worker] --> Cron[Cron Trigger (5m)]
-    Cron --> Fetch[Fetch Transactions]
-    Fetch --> Filter[Filter > $100k]
-    Filter --> KV[KV Storage]
-    Filter --> Telegram[Telegram Bot API]
-    Telegram --> Channel[Telegram Channel]
-```
+### System Flow
+
+**Frontend Layer:**
+- User → React Frontend (Vite + TypeScript)
+- Frontend → LocalStorage (Privacy Score Persistence)
+- Frontend → Blockchair API (Live Network Data)
+
+**Backend Layer (Cloudflare Worker):**
+- Cron Trigger (every 5 minutes)
+- Fetch Latest Zcash Transactions
+- Filter transactions > $100k
+- Check KV Storage (deduplication)
+- Send Alert → Telegram Bot API
+- Notify → [Telegram Channel](https://t.me/zscope_alerts)
 
 ### Tech Stack
 
