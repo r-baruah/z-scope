@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Eye, EyeOff, TrendingUp, ShieldAlert, ShieldCheck } from 'lucide-react';
+import { Eye, EyeOff, ShieldAlert, ShieldCheck } from 'lucide-react';
 import { usePrivacyScore } from '../hooks/usePrivacyScore';
 import { formatNumber } from '../utils/formatters';
 

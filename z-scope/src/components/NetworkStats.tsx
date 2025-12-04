@@ -1,4 +1,4 @@
-import { Card, AreaChart } from '@tremor/react';
+import { AreaChart } from '@tremor/react';
 import { TrendingUp, Shield, Cpu, Activity } from 'lucide-react';
 import { useShieldedSupply } from '../hooks/useShieldedSupply';
 import { formatCurrency, formatNumber, formatPercent, formatHashrate } from '../utils/formatters';

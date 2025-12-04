@@ -28,7 +28,7 @@
 
 <div align="center" style="display: flex; gap: 10px; justify-content: center;">
   <img src="assets/calc.png" alt="Privacy Calculator" width="48%" style="border-radius: 10px;" />
-  <img src="assets/analytics_screenshot.png" alt="Network Analytics" width="48%" style="border-radius: 10px;" />
+  <img src="assets/Analy.png" alt="Network Analytics" width="48%" style="border-radius: 10px;" />
 </div>
 
 ---
