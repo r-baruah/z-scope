@@ -6,7 +6,7 @@
 
 **A Real-Time Privacy Analytics Platform for the Zcash Ecosystem**
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge&logo=vercel)](https://z-scope.vercel.app)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen?style=for-the-badge&logo=vercel)](https://z-scope-2jeg.vercel.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![Built with React](https://img.shields.io/badge/React-18.3-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
@@ -14,7 +14,7 @@
 
 **Built for Zypherpunks Hackathon 2025 | By Ripuranjan Baruah**
 
-[Live Demo](#) • [Video Demo](https://www.youtube.com/watch?v=5eVHYjtfir4) • [Telegram Alerts](https://t.me/zscope_alerts) • [Worker Status](https://long-art-bd4d.fi493072.workers.dev/health)
+[Live Demo](https://z-scope-2jeg.vercel.app) • [Video Demo](https://www.youtube.com/watch?v=5eVHYjtfir4) • [Telegram Alerts](https://t.me/zscope_alerts) • [Worker Status](https://long-art-bd4d.fi493072.workers.dev/health)
 
 </div>
 
