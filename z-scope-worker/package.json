@@ -1,0 +1,26 @@
+{
+  "name": "z-scope-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker for Z-Scope whale transaction monitoring",
+  "main": "whale-monitor.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "kv:create": "wrangler kv:namespace create WHALE_TRACKER",
+    "test": "wrangler dev --test-scheduled"
+  },
+  "keywords": [
+    "cloudflare",
+    "worker",
+    "zcash",
+    "telegram",
+    "whale-alert"
+  ],
+  "author": "Z-Scope Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "wrangler": "^3.84.1"
+  }
+}

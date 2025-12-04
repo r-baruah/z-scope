@@ -1,0 +1,33 @@
+# Cloudflare Worker Configuration for Z-Scope Whale Monitor
+
+name = "z-scope-whale-monitor"
+main = "whale-monitor.ts"
+compatibility_date = "2024-12-04"
+workers_dev = true
+
+# Account ID - Get this from Cloudflare Dashboard
+# account_id = "YOUR_ACCOUNT_ID"
+
+# KV Namespace Binding
+# After running: wrangler kv:namespace create "WHALE_TRACKER"
+# Copy the ID from the output and replace YOUR_KV_NAMESPACE_ID below
+[[kv_namespaces]]
+binding = "WHALE_TRACKER"
+id = "YOUR_KV_NAMESPACE_ID"
+# preview_id = "YOUR_PREVIEW_KV_NAMESPACE_ID"  # Optional for preview
+
+# Scheduled Triggers - Run every 5 minutes
+[triggers]
+crons = ["*/5 * * * *"]
+
+# Environment Variables (Non-Secret)
+[vars]
+ENVIRONMENT = "production"
+
+# Secrets (Set using: wrangler secret put SECRET_NAME)
+# TELEGRAM_BOT_TOKEN - Set with: wrangler secret put TELEGRAM_BOT_TOKEN
+# TELEGRAM_CHANNEL_ID - Set with: wrangler secret put TELEGRAM_CHANNEL_ID
+
+# Build Configuration
+[build]
+command = ""
